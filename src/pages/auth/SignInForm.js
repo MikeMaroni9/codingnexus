@@ -49,11 +49,16 @@ function SignInForm() {
     });
   };
 
+  
   return (
+    
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
+        <Image
+          className={`${appStyles.FillerImage}`}
+          src={"https://res.cloudinary.com/dyv1fobjp/image/upload/v1698865321/Sign_in_xjjsib.png"}
+        />
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>sign in</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -111,10 +116,6 @@ function SignInForm() {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
       >
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
-        />
       </Col>
     </Row>
   );
