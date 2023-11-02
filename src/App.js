@@ -14,6 +14,7 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -53,6 +54,7 @@ function App() {
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/leaderboard" render={() => <LeaderBoard />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />

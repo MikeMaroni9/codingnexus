@@ -54,6 +54,12 @@ const NavBar = () => {
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
+      <NavLink 
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/leaderboard">
+        <i className="fas fa-crown"></i>Top
+      </NavLink>
       <NavLink
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
@@ -99,9 +105,10 @@ const NavBar = () => {
           ref={ref}
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
+          className={styles.Toggle}
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto text-left">
+          <Nav className="ml-auto text-center">
             <NavLink
               exact
               className={styles.NavLink}
