@@ -53,7 +53,7 @@ function SignInForm() {
   return (
     
     <Row className={styles.Row}>
-      <Col className="my-auto p-0 p-md-2" md={6}>
+      <Col className="my-auto p-0 p-md-2 width=10px margin-top:200px" md={{ span: 6, offset: 3 }}>
         <Image
           className={`${appStyles.FillerImage}`}
           src={"https://res.cloudinary.com/dyv1fobjp/image/upload/v1698865321/Sign_in_xjjsib.png"}
