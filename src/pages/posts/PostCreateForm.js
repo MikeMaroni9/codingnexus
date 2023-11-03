@@ -13,7 +13,7 @@ import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
 
-import styles from "../../styles/PostCreateEditForm.module.css";
+
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -29,8 +29,9 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    post_filter: 'html',
   });
-  const { title, content, image } = postData;
+  const { title, content, post_filter, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -57,6 +58,7 @@ function PostCreateForm() {
   
     formData.append("title", title);
     formData.append("content", content);
+    formData.append("post_filter", postData.post_filter);
   
     if (imageInput.current.files.length > 0) {
       formData.append("image", imageInput.current.files[0]);
@@ -80,6 +82,7 @@ function PostCreateForm() {
         <Form.Control
           type="text"
           name="title"
+          maxLength={50}
           value={title}
           onChange={handleChange}
         />
@@ -105,6 +108,26 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+          <Form.Group>
+      <Form.Label>Post Filter</Form.Label>
+      <Form.Control
+        as="select"
+        name="post_filter"
+        value={postData.post_filter}
+        onChange={handleChange}
+      >
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="react">React</option>
+      </Form.Control>
+    </Form.Group>
+    {errors?.post_filter?.map((message, idx) => (
+      <Alert variant="warning" key={idx}>
+        {message}
+      </Alert>
+    ))}
       <Form.Group className="text-center">
         {image ? (
           <>
