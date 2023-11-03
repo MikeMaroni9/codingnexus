@@ -16,6 +16,14 @@
   
 }
 
+.CreateForm {
+  font-size: x-large;
+  padding-top: 120px;
+  width: 66%;
+  border-radius: 2px;
+  
+}
+
 .FillerImage {
   object-fit: cover;
   height: 100%;
