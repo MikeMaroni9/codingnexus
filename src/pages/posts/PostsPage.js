@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -64,21 +64,23 @@ function PostsPage({ message, filter = "" }) {
 
         {hasLoaded ? (
           <>
-            {posts.results.length ? (
-              <InfiniteScroll 
-                children={posts.results.map((post) => (
-                  <Post key={post.id} {...post} setPosts={setPosts} />
-                ))}
-                dataLength={posts.results.length}
-                loader={<Asset spinner />}
-                hasMore={!!posts.next}
-                next={() => fetchMoreData(posts, setPosts)}
-              />
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults} message={message} />
-              </Container>
-            )}
+        {posts.results.length ? (
+          <InfiniteScroll 
+            children={posts.results.map((post) => (
+              <Link to={`/posts/${post.id}`} key={post.id}>
+                <Post {...post} setPosts={setPosts} />
+              </Link>
+            ))}
+            dataLength={posts.results.length}
+            loader={<Asset spinner />}
+            hasMore={!!posts.next}
+            next={() => fetchMoreData(posts, setPosts)}
+          />
+        ) : (
+          <Container className={appStyles.Content}>
+            <Asset src={NoResults} message={message} />
+          </Container>
+        )}
           </>
         ) : (
           <Container className={appStyles.Content}>

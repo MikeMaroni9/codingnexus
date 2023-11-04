@@ -13,7 +13,7 @@ import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
 
-
+import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -29,7 +29,7 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
-    post_filter: 'html',
+    post_filter: 'HTML',
   });
   const { title, content, post_filter, image } = postData;
 
@@ -109,18 +109,18 @@ function PostCreateForm() {
         </Alert>
       ))}
           <Form.Group>
-      <Form.Label>Post Filter</Form.Label>
+      <Form.Label>Please Select Category</Form.Label>
       <Form.Control
         as="select"
         name="post_filter"
         value={postData.post_filter}
         onChange={handleChange}
       >
-        <option value="html">HTML</option>
-        <option value="css">CSS</option>
-        <option value="javascript">JavaScript</option>
-        <option value="python">Python</option>
-        <option value="react">React</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="React">React</option>
       </Form.Control>
     </Form.Group>
     {errors?.post_filter?.map((message, idx) => (
