@@ -70,7 +70,7 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #199dd1;
+  color: red;
 }
 
 figure {
