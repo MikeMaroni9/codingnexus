@@ -84,6 +84,7 @@ function PostCreateForm() {
           name="title"
           maxLength={50}
           value={title}
+          placeholder="Enter the title here"
           onChange={handleChange}
         />
       </Form.Group>
@@ -100,6 +101,7 @@ function PostCreateForm() {
           rows={6}
           name="content"
           value={content}
+          placeholder="Write your content here"
           onChange={handleChange}
         />
       </Form.Group>
