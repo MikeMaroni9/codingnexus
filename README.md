@@ -1,7 +1,19 @@
 <a href="https://ibb.co/x690cXL"><img src="https://i.ibb.co/m4ZwYbT/coding-canva.jpg" alt="coding-canva" border="0"></a>
-<h1> Project 5 : Coding Nexus - "One Line At a Time" </h1><p> Blog type application where a registered user can create a new posts, or comment on already existing ones.</p><p> Developed using : HTML, CSS, JAVASCRIPT, REACT, PYTHON, BOOTSTRAP and DJANGO Rest API</p><br><p>Link to the project on Heroku: <a href="https://coding-nexus-df46516a7083.herokuapp.com/">Coding Nexus on Heroku</a></p>
-<br><br><p>Link to the GITHUB repository: <a href="https://github.com/MikeMaroni9/codingnexus">GITHUB</a></p>
-<br><p>Link to the GITHUB USER Stories: <a href="https://github.com/users/MikeMaroni9/projects/5">User Stories</a></p><br><p>Link to the GITHUB Milestones: <a href="https://github.com/MikeMaroni9/codingnexus/milestones">Milestones</a></p><br><h2> The Process of the Web Page</h2><p>Blog style page with authentication, ability to create posts, delete posts. Leave comments, edit comments and like the posts.</p>
+<h1> Project 5 : Coding Nexus - "One Line At a Time" </h1><p> Blog type application where a registered user can create a new posts, or comment on already existing ones.</p><p> Developed using : HTML, CSS, JAVASCRIPT, REACT, PYTHON, BOOTSTRAP and DJANGO Rest API</p>
+<br>
+<p>Link to the project on Heroku: <a href="https://coding-nexus-df46516a7083.herokuapp.com/">Coding Nexus on Heroku</a></p>
+<br>
+<p>Link to the API on Heroku: <a href="https://finals-api-4952a1f1f072.herokuapp.com//">Coding Nexus on Heroku</a></p>
+<br>
+<p>Link to the Project GITHUB repository: <a href="https://github.com/MikeMaroni9/codingnexus">GITHUB</a></p>
+<br>
+<p>Link to the API GITHUB repository: <a href="https://github.com/MikeMaroni9/api-finals">GITHUB</a></p>
+<br>
+<p>Link to the GITHUB USER Stories: <a href="https://github.com/users/MikeMaroni9/projects/5">User Stories</a></p>
+<br>
+<p>Link to the GITHUB Milestones: <a href="https://github.com/MikeMaroni9/codingnexus/milestones">Milestones</a></p>
+<br>
+<h2> The Process of the Web Page</h2><p>Blog style page with authentication, ability to create posts, delete posts. Leave comments, edit comments and like the posts.</p>
 <p>Upon opening a page, you are greeted with pre-filled blog style page. All content is taken from original sources, comments generated randomly without particular agenda</p><a href="https://ibb.co/ZmqF0Dg"><img src="https://i.ibb.co/16FPkWX/1-login-buttons-no-autharization.png" alt="1-login-buttons-no-autharization" border="0"></a>
 
 <p>For visitors that are not signed-up and logged in, you are greeted with Coding Nexus logo which acts as a link button to index page, and Three buttons on the opposite side. Home, Sign Up and Login</p><a href="https://imgbb.com/"><img src="https://i.ibb.co/F3hw416/2-login-buttons.png" alt="2-login-buttons" border="0"></a>
