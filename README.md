@@ -3,7 +3,7 @@
 <br>
 <p>Link to the project on Heroku: <a href="https://coding-nexus-df46516a7083.herokuapp.com/">Coding Nexus on Heroku</a></p>
 <br>
-<p>Link to the API on Heroku: <a href="https://finals-api-4952a1f1f072.herokuapp.com//">Coding Nexus on Heroku</a></p>
+<p>Link to the API on Heroku: <a href="https://finals-api-4952a1f1f072.herokuapp.com/">Coding Nexus on Heroku</a></p>
 <br>
 <p>Link to the Project GITHUB repository: <a href="https://github.com/MikeMaroni9/codingnexus">GITHUB</a></p>
 <br>
