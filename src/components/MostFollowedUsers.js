@@ -6,7 +6,7 @@ const MostFollowedUsers = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const profilesResponse = await fetch('https://xzapi-01e251739139.herokuapp.com/profiles');
+        const profilesResponse = await fetch('https://finals-api-4952a1f1f072.herokuapp.com/profiles');
         const profilesData = await profilesResponse.json();
 
         if (!Array.isArray(profilesData.results)) {
@@ -18,7 +18,7 @@ const MostFollowedUsers = () => {
           username: profile.owner,
           followers: profile.followers_count,
           following: profile.following_count,
-          url: `https://coding-nexus-df46516a7083.herokuapp.com/profiles/${profile.id}`,
+          url: `https://https://finals-api-4952a1f1f072.herokuapp.com/profiles/${profile.id}`,
           image: profile.image,
         }));
 
