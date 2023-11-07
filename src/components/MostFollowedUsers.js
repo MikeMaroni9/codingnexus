@@ -18,7 +18,7 @@ const MostFollowedUsers = () => {
           username: profile.owner,
           followers: profile.followers_count,
           following: profile.following_count,
-          url: `https://finals-api-4952a1f1f072.herokuapp.com/profiles/${profile.id}/`,
+          url: `https://coding-nexus-df46516a7083.herokuapp.com/profiles/${profile.id}/`,
           image: profile.image,
         }));
 
