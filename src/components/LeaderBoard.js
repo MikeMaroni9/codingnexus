@@ -17,8 +17,8 @@ const Leaderboard = () => {
     try {
 
       const [postsResponse, profilesResponse] = await Promise.all([
-        fetch('https://finals-api-4952a1f1f072.herokuapp.com/posts'),
-        fetch('https://finals-api-4952a1f1f072.herokuapp.com/profiles'),
+        fetch('https://coding-nexus-df46516a7083.herokuapp.com/posts'),
+        fetch('https://coding-nexus-df46516a7083.herokuapp.com/profiles'),
       ]);
 
       const [postsData, profilesData] = await Promise.all([
@@ -36,7 +36,7 @@ const Leaderboard = () => {
         title: post.title,
         comments: post.comments_count,
         likes: post.likes_count,
-        url: `https://finals-api-4952a1f1f072.herokuapp.com/${post.id}`,
+        url: `https://coding-nexus-df46516a7083.herokuapp.com/posts/${post.id}`,
       }));
 
       const mostCommented = postEntries.slice().sort((a, b) => b.comments - a.comments).slice(0, 5);
@@ -51,7 +51,7 @@ const Leaderboard = () => {
         username: profile.owner,
         followers: profile.followers_count,
         following: profile.following_count,
-        url: `https://finals-api-4952a1f1f072.herokuapp.com/profiles/${profile.id}`,
+        url: `https://coding-nexus-df46516a7083.herokuapp.com/profiles/${profile.id}`,
         image: profile.image,
       }));
 
