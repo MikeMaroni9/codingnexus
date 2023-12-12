@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
@@ -19,6 +20,10 @@ import LeaderBoard from "./components/LeaderBoard";
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+
+  useEffect(() => {
+    document.title = 'Coding Nexus';
+  }, []);
 
   return (
     <div className={styles.App}>
