@@ -7,7 +7,7 @@ const MostLikedPosts = ({ mostLikedPosts }) => {
       <ul>
         {mostLikedPosts.map((entry) => (
           <li key={entry.id}>
-            <a href={entry.url} target="_blank" rel="noopener noreferrer">
+            <a href={entry.url} rel="noopener noreferrer">
               {entry.title} - Likes: {entry.likes}
             </a>
           </li>

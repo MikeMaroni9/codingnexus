@@ -76,7 +76,7 @@ const Leaderboard = () => {
           <ul>
             {mostCommentedPosts.map((entry) => (
               <li key={entry.id}>
-                <a href={entry.url} target="_blank" rel="noopener noreferrer">
+                <a href={entry.url} rel="noopener noreferrer">
                   {entry.title} - Comments: {entry.comments}
                 </a>
               </li>
@@ -93,7 +93,7 @@ const Leaderboard = () => {
                   alt={stalker.username}
                   style={{ width: '25px', height: '25px', borderRadius: '50%' }}
                 />{' '}
-                <a href={stalker.url} target="_blank" rel="noopener noreferrer">
+                <a href={stalker.url} rel="noopener noreferrer">
                   {stalker.username} - Following: {stalker.following}
                 </a>
               </li>

@@ -43,7 +43,7 @@ const MostFollowedUsers = () => {
               alt={user.username}
               style={{ width: '25px', height: '25px', borderRadius: '50%' }}
             />{' '}
-            <a href={user.url} target="_blank" rel="noopener noreferrer">
+            <a href={user.url}  rel="noopener noreferrer">
               {user.username} - Followers: {user.followers}
             </a>
           </li>
