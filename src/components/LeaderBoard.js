@@ -5,17 +5,13 @@ import { Container } from 'react-bootstrap';
 import MostLikedPosts from './MostLikedPosts';
 import MostFollowedUsers from './MostFollowedUsers';
 
-
 const Leaderboard = () => {
-
   const [mostLikedPosts, setMostLikedPosts] = useState([]);
   const [mostCommentedPosts, setMostCommentedPosts] = useState([]);
   const [stalkers, setStalkers] = useState([]);
 
-
   const fetchData = async () => {
     try {
-
       const [postsResponse, profilesResponse] = await Promise.all([
         fetch('https://finals-api-4952a1f1f072.herokuapp.com/posts'),
         fetch('https://finals-api-4952a1f1f072.herokuapp.com/profiles'),
@@ -30,7 +26,6 @@ const Leaderboard = () => {
         throw new Error('Err');
       }
 
-
       const postEntries = postsData.results.map((post) => ({
         id: post.id,
         title: post.title,
@@ -44,7 +39,6 @@ const Leaderboard = () => {
 
       setMostCommentedPosts(mostCommented);
       setMostLikedPosts(mostLiked);
-
 
       const userEntries = profilesData.results.map((profile) => ({
         id: profile.id,
@@ -67,11 +61,12 @@ const Leaderboard = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="d-flex justify-content-center align-items-start" style={{ height: '100vh', marginTop: '40px' }}>
       <Row>
         <Col>
-          <h1 className="fas fa-crown">Leader Board</h1>
-
+          <h1 className="fas fa-crown" style={{ marginBottom: '60px', color: 'red'}}>
+            Leader Board
+          </h1>
           <p>Most Commented Posts</p>
           <ul>
             {mostCommentedPosts.map((entry) => (
