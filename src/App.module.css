@@ -91,3 +91,10 @@ figure {
 *::-webkit-scrollbar-thumb:hover {
   background: #cf2424;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-color: black;
+    font-size: 8px;
+  }
+}
