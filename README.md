@@ -11,28 +11,73 @@
 
 LO1
 
-1. On mobile screens, the leaderboard page presents an issue where the black background disappears as the user scrolls down the page. This causes the white text to become unreadable against the white background, affecting user visibility and readability. 
+1. On mobile screens, the leaderboard page presents an issue where the black background disappears as the user scrolls down the page. This causes the white text to become unreadable against the white background, affecting user visibility and readability. The leaderboard UX should be addressed on small devices so that all content is legible. 
 <br>
 <br>
 At first I couldn't find the problem with the page and I think that's how it slipped my attention at previous submission attempt, but when the screen is reduced and at the same time the  text is zoomed in enough the background indeed disappears. To fix this I added the globas css file to the leaderboard.js and improved the css file itself, adding the media signature, specifying the background and decreasing the font size as well for the smaller screens.
 <br>
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/dJJkVyC/1-leaderboard-fix.png" alt="1-leaderboard-fix" border="0"></a>
 
-1.6	No	Sensitive information exists in the repository, leading to security issues.
 
+<br>
+<hr>
+<br>
 
-
-Other than this, the env.py file is present in the front-end codebase that contains the DATABASE_URL, SECRET_KEY, etc. which should be hidden from the users. 
 
 LO2
 The "Reusable React components" section is present in the readme that highlights the component reusability for this application. However, it would be great to list the functionality served by each component and how that component is reused to serve similar functionality across the application thus saving the need to rewrite the code. We can also link the component reusability to improvements in the user experience that have been achieved by using the React library. 
+<br>
+<br>
+<p>I have to admit that the project was almost finished when I came across the problem that I have to include reusability component. By striving to include more and more different solutions in the project to display the aquired knowledge from Code Institute the fact to re use something to enhace the project became and afterthought. The leaderboard section of the project was already finished when I started to "slice it and dice it" to cut out functions and refactor them so that they can be used elsewhere in the project. However this doesn't change the fact that they can be implemented across the website, "Most Followed Users" and "Most Liked Posts" are such an neutral but informative topic, that they wouldn't be out of place in Profile Menu or After the comment sections in Post page to promote community engagement. 
+<br>
+<br>
+1) Most Followed Users : 
+<br>
+<a href="https://ibb.co/GkY9QmF"><img src="https://i.ibb.co/gwqdZY6/comments-added.png" alt="comments-added" border="0"></a>
+<br>
+<p>The component is an module designed to fetch , process and discplay information about the top 5 most followed users on the platform. It leverages React hooks (useState and useEffect) to manage state and handle asynchronous data fetching.</p>
+<p>It initializes the state and fetches data from "https://finals-api-4952a1f1f072.herokuapp.com/profiles"</p>
+<p> It checks if the expected data structure is an array and maps the raw profile data to a more usable format. Sorts profiles by the follower count and slices the first 5 users with the highest count and stores it. Before rendering the bullet list with user avatar picture, name and follower count attached.</p>
+<br>
+2) Most Liked Posts 
+<br>
+<br>
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/NyWwM75/2.png" alt="2" border="0"></a>
+<br>
+<p>This component is designed to use the map method to sorts through the most liked posts rendering the list item for each entry creating a hyperlink with title of the post and number of the likes it has. </p>
+<br>
+To use these components elsewhere in the project. Import to component : 
+<br>
+<br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/smZpp3s/import-1.png" alt="import-1" border="0"></a>
+
+<br>
+And include the component in the JSX file :
+<br>
+<br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/w0cp4FD/import-2.png" alt="import-2" border="0"></a>
+
+<br>
+<hr>
+<br>
+
+1.6	No	Sensitive information exists in the repository, leading to security issues.
+Other than this, the env.py file is present in the front-end codebase that contains the DATABASE_URL, SECRET_KEY, etc. which should be hidden from the users. 
+
+The env.py needs to be hidden from the users. 
+
+In addition, the env.py present in the front-end repository contains security-sensitive information that needs to be hidden from the users. 
+
+
+
 
 LO3
 The backend is powered by the Django Rest Framework and the codebase contains multiple models. However, these models are dependent on the course walkthrough project and need to be customized for this particular project. For the API readme, it is templated but the API manual testing details are added in the front-end readme. The API deployment steps are also added there. It would be great to customize the backend readme with API-related information. 
 Merit Criteria 
-The CRUD operations are supported on the UI but the notifications are missing. In addition, the env.py present in the front-end repository contains security-sensitive information that needs to be hidden from the users. Regarding the backend, it is developed using the DRF but lacks customizations in the models. 
+The CRUD operations are supported on the UI but the notifications are missing. Regarding the backend, it is developed using the DRF but lacks customizations in the models. 
 
-Overall, this application demonstrates a decent understanding of React component-based architecture to develop a front end that supports CRUD operations on the UI. However, the notifications for these operations need to be displayed. The env.py needs to be hidden from the users. The leaderboard UX should be addressed on small devices so that all content is legible. The readme should map the project goals and components to the relevant user stories. With these enhancements, the project will be on its way to realizing its full potential.
+Overall, this application demonstrates a decent understanding of React component-based architecture to develop a front end that supports CRUD operations on the UI. However, the notifications for these operations need to be displayed.  The readme should map the project goals and components to the relevant user stories. With these enhancements, the project will be on its way to realizing its full potential.
 
 
 <hr>
