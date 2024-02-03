@@ -84,9 +84,20 @@ In addition, the env.py present in the front-end repository contains security-se
 
 
 
+<hr>
+<p>LO3</p>
+<br>
+<p>The backend is powered by the Django Rest Framework and the codebase contains multiple models. However, these models are dependent on the course walkthrough project and need to be customized for this particular project.</p>
+<br>
 
+<br>
+Models updated and diagrams created using Lucid Charts.
+<br>
+<a href="https://ibb.co/pbh0rVm"><img src="https://i.ibb.co/xXFC894/Diagram-Lucid-Charts.png" alt="Diagram-Lucid-Charts" border="0"></a>
+<br>
+<br>
+<hr>
 LO3
-The backend is powered by the Django Rest Framework and the codebase contains multiple models. However, these models are dependent on the course walkthrough project and need to be customized for this particular project.  
 Merit Criteria 
 The CRUD operations are supported on the UI but the notifications are missing. Regarding the backend, it is developed using the DRF but lacks customizations in the models. 
 
