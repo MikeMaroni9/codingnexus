@@ -28,7 +28,7 @@ LO2
 The "Reusable React components" section is present in the readme that highlights the component reusability for this application. However, it would be great to list the functionality served by each component and how that component is reused to serve similar functionality across the application thus saving the need to rewrite the code. We can also link the component reusability to improvements in the user experience that have been achieved by using the React library. 
 <br>
 <br>
-<p>I have to admit that the project was almost finished when I came across the problem that I have to include reusability component. By striving to include more and more different solutions in the project to display the aquired knowledge from Code Institute the fact to re use something to enhace the project became and afterthought. The leaderboard section of the project was already finished when I started to "slice it and dice it" to cut out functions and refactor them so that they can be used elsewhere in the project. However this doesn't change the fact that they can be implemented across the website, "Most Followed Users" and "Most Liked Posts" are such an neutral but informative topic, that they wouldn't be out of place in Profile Menu or After the comment sections in Post page to promote community engagement. 
+<p>I have to admit that the project was almost finished when I came across the problem that I have to include reusability component. By striving to include more and more different solutions in the project to display the aquired knowledge from Code Institute the fact to re use something to enhace the project became an afterthought. The leaderboard section of the project was already finished when I started to "slice it and dice it" to cut out functions and refactor them so that they can be used elsewhere in the project. However this doesn't change the fact that they can be implemented across the website, "Most Followed Users" and "Most Liked Posts" are such an neutral but informative topic, that they wouldn't be out of place in Profile Menu or After the comment sections in Post page to promote community engagement. 
 <br>
 <br>
 1) Most Followed Users : 
@@ -61,6 +61,19 @@ And include the component in the JSX file :
 <br>
 <hr>
 <br>
+LO3
+<br>
+<p>For the API readme, it is templated but the API manual testing details are added in the front-end readme. The API deployment steps are also added there. It would be great to customize the backend readme with API-related information.</p>
+<br>
+<br>
+<p>API Readme file updated : <a href="https://github.com/MikeMaroni9/api-finals">Link To API</a></p>
+
+<hr>
+
+
+
+
+
 
 1.6	No	Sensitive information exists in the repository, leading to security issues.
 Other than this, the env.py file is present in the front-end codebase that contains the DATABASE_URL, SECRET_KEY, etc. which should be hidden from the users. 
@@ -73,7 +86,7 @@ In addition, the env.py present in the front-end repository contains security-se
 
 
 LO3
-The backend is powered by the Django Rest Framework and the codebase contains multiple models. However, these models are dependent on the course walkthrough project and need to be customized for this particular project. For the API readme, it is templated but the API manual testing details are added in the front-end readme. The API deployment steps are also added there. It would be great to customize the backend readme with API-related information. 
+The backend is powered by the Django Rest Framework and the codebase contains multiple models. However, these models are dependent on the course walkthrough project and need to be customized for this particular project.  
 Merit Criteria 
 The CRUD operations are supported on the UI but the notifications are missing. Regarding the backend, it is developed using the DRF but lacks customizations in the models. 
 
