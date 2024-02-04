@@ -56,7 +56,13 @@ const NavBar = () => {
         to="/leaderboard">
         <i className="fas fa-crown"></i>Top
       </NavLink>
-      
+      <NavLink 
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/Notifications">
+        <i className="fas fa-crown"></i>Notifications
+      </NavLink>
+
       {currentUser && currentUser.profile_id && currentUser.profile_image && (
         <NavLink
           className={styles.NavLink}
