@@ -16,8 +16,9 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import Notification from '../../components/Notification';
 
-function SignInForm() {
+function SignInForm({ onLoginSuccess }) {
   const setCurrentUser = useSetCurrentUser();
   useRedirect("loggedIn");
 
@@ -28,14 +29,29 @@ function SignInForm() {
   const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
+  const [showNotification, setShowNotification] = useState(false);
+  const [onLoginSuccessMessage, setOnLoginSuccessMessage] = useState('');
 
   const history = useHistory();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
+
+      // Welcome Message
+      const welcomeMessage = `Welcome to Coding Nexus, ${data.user.username}!`;
+
+      // Show the notification with the welcome message
+      setShowNotification(true);
+      setOnLoginSuccessMessage(welcomeMessage);
+
+      
+      onLoginSuccess && onLoginSuccess(welcomeMessage);
+
+      // Redirect 
       history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
@@ -49,9 +65,7 @@ function SignInForm() {
     });
   };
 
-  
   return (
-    
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2 width=10px margin-top:200px" md={{ span: 6, offset: 3 }}>
         <Image
@@ -106,6 +120,15 @@ function SignInForm() {
             ))}
           </Form>
         </Container>
+
+        {/* Show the Notification component  */}
+        {showNotification && (
+          <Notification
+            message={onLoginSuccessMessage || 'Login successful!,'}
+            onClose={() => setShowNotification(false)}
+          />
+        )}
+
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
             Don't have an account? <span>Sign up now!</span>
