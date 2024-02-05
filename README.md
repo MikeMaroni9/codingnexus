@@ -1,5 +1,18 @@
 <h2> Final Resubmission
 <hr>
+<P>Final Update an hour before the deadline : </p>
+<br>
+<br>
+<p>
+Current problems : When signing up it doesn't automatically route to login page and throws error : Failed to load resource: the server responded with a status of 500 (Internal Server Error) finals-api-4952a1f1f072.herokuapp.com/dj-rest-auth/registration/:1 . However if you then press the sign in and use the registered account it works just fine. But it might not redirect to the social portals main page. useRedirect.js:11 
+POST https://finals-api-4952a1f1f072.herokuapp.com/dj-rest-auth/token/refresh/ 401 (Unauthorized)
+
+The old database files doesn't show up anymore in the Leaderboard section, only the newly created user does. So the Most liked Posts and Most Commented Posts show only the new user information. I think I ruined it while trying to add notification with signals and either migrating the database or writing the code the /profiles/ doesn't show the old accounts anymore, just the new ones. 
+
+Pressing the like on the posts doesnt automatically increase the like count on some devices, have to refresh for it to work. But it decreases the count just fine. I think I ruined it at the same time when trying to implement the notifications. POST https://finals-api-4952a1f1f072.herokuapp.com/likes/ 500 (Internal Server Error)
+. I am running out of time and won't be able to fix this, everything was working just fine before I tried to add notifications to the project... well the goods news is that the notifications work. Been working on this as much free time I had, and this is my last submission... hopefully this isn't as bad as leaving the Debug on and I have a chance of passing the course. 
+<br>Regards, KV</p>
+<hr>
 <p>Here's my improved and updated final resubmission of the project titled - <strong>Coding Nexus</strong> - "One Line At a Time"<p>
 <p>To make the resubmission process easier for all involved parties I once again present the problems found in the previous submission attempt with my approach of how I fixed the problems. Unfortunately the second submission attempt failed as well and hopefully this one will do ! </p>
 <p>Here's the upload of the last evaluation:<p>
