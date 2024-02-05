@@ -7,13 +7,23 @@ import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import Notification from "../../components/Notification";  
 
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
+  const [notification, setNotification] = useState(null);  
 
   const handleChange = (event) => {
     setContent(event.target.value);
+  };
+
+  const showNotification = (message) => {  
+    setNotification({ message });
+
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);  
   };
 
   const handleSubmit = async (event) => {
@@ -36,6 +46,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
+      showNotification("Comment posted successfully!");  
     } catch (err) {
       console.log(err);
     }
@@ -65,6 +76,14 @@ function CommentCreateForm(props) {
       >
         post
       </button>
+
+      {/* Notification component */}
+      {notification && (
+        <Notification
+          message={notification.message}
+          onClose={() => setNotification(null)}
+        />
+      )}
     </Form>
   );
 }

@@ -16,10 +16,7 @@ import { fetchMoreData } from "../../utils/utils";
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
-
-  
   const [postFilter, setPostFilter] = useState(null);
-
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
@@ -32,11 +29,8 @@ function PostPage() {
           axiosReq.get(`/comments/?post=${id}`),
         ]);
 
-        
         setPost({ results: [post] });
-
         setPostFilter(post.post_filter);
-        
         setComments(comments);
       } catch (err) {
         console.log(err);
@@ -45,6 +39,10 @@ function PostPage() {
 
     handleMount();
   }, [id]);
+
+  const showNotification = (message, variant) => {
+    console.log(`Notification: ${message} - Variant: ${variant}`);
+  };
 
   return (
     <Row className="h-100">
@@ -57,21 +55,18 @@ function PostPage() {
         )}
         <Container className={appStyles.Content}>
           {currentUser ? (
-            <CommentCreateForm
-              profile_id={currentUser.profile_id}
-              profileImage={profile_image}
-              post={id}
-              setPost={setPost}
-              
-              setComments={setComments}
-            />
+        <CommentCreateForm
+            profile_id={currentUser.profile_id}
+            profileImage={profile_image}
+            post={id}
+            setPost={setPost}
+            setComments={setComments}
+            showNotification={showNotification}
+          />
           ) : comments.results.length ? (
             "Comments"
           ) : null}
-          
-          
-          
-          
+
           {comments.results.length ? (
             <InfiniteScroll
               children={comments.results.map((comment) => (

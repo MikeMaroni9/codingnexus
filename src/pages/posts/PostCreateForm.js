@@ -1,6 +1,4 @@
-
 import React, { useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -8,33 +6,28 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
-
 import Asset from "../../components/Asset";
-
 import Upload from "../../assets/upload.png";
-
-
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import Notification from "../../components/Notification"; // Import Notification component
 
 function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
-    post_filter: 'HTML',
+    post_filter: "HTML",
   });
   const { title, content, image } = postData;
-
   const imageInput = useRef(null);
   const history = useHistory();
+  const [notification, setNotification] = useState(null);
 
   const handleChange = (event) => {
     setPostData({
@@ -52,6 +45,7 @@ function PostCreateForm() {
       });
     }
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -66,11 +60,18 @@ function PostCreateForm() {
   
     try {
       const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
+      setNotification({ message: "Post created successfully!", variant: "success" });
+  
+      // Delay the redirection for 2 seconds
+      setTimeout(() => {
+        setNotification(null);
+        history.push(`/posts/${data.id}`);
+      }, 2000);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
+        setNotification({ message: "Error creating post", variant: "danger" });
       }
     }
   };
@@ -110,26 +111,26 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-          <Form.Group>
-      <Form.Label>Please Select Category</Form.Label>
-      <Form.Control
-        as="select"
-        name="post_filter"
-        value={postData.post_filter}
-        onChange={handleChange}
-      >
-        <option value="HTML">HTML</option>
-        <option value="CSS">CSS</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="Python">Python</option>
-        <option value="React">React</option>
-      </Form.Control>
-    </Form.Group>
-    {errors?.post_filter?.map((message, idx) => (
-      <Alert variant="warning" key={idx}>
-        {message}
-      </Alert>
-    ))}
+      <Form.Group>
+        <Form.Label>Please Select Category</Form.Label>
+        <Form.Control
+          as="select"
+          name="post_filter"
+          value={postData.post_filter}
+          onChange={handleChange}
+        >
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Python">Python</option>
+          <option value="React">React</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.post_filter?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group className="text-center">
         {image ? (
           <>
@@ -188,6 +189,13 @@ function PostCreateForm() {
           <Container className={appStyles.CreateForm}>{textFields}</Container>
         </Col>
       </Row>
+      {notification && (
+        <Notification 
+          message={notification.message} 
+          variant={notification.variant} 
+          onClose={() => setNotification(null)}
+        />
+      )}
     </Form>
   );
 }

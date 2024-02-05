@@ -98,16 +98,45 @@ LO3
 <br>
 <a href="https://ibb.co/pbh0rVm"><img src="https://i.ibb.co/xXFC894/Diagram-Lucid-Charts.png" alt="Diagram-Lucid-Charts" border="0"></a>
 <br>
+<p style="color: red;">Created another App/Custom Module called Functions thats uses the api and Signals to import the notifications to the front end project. I don't have time to finish it as I have to hand in the project later this morning, but I connected it to the front end and it showed up in the created Notifications toolbar that user such and such liked your post named such and such. I didn't include the notification toolbar in the final deployment as it currently showed all notifications to all users, without checking the coresponding user id first and only show appropriate messages to to them. But the potential is there and I will finish it once I have some more free time.</p>
 <br>
+<a href="https://ibb.co/Hd7NRGd"><img src="https://i.ibb.co/2Nq8RcN/15.png" alt="15" border="0"></a>
+<br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/wCJydjx/11.png" alt="11" border="0"></a>
+<br>
+<a href="https://ibb.co/C9938g9"><img src="https://i.ibb.co/FYYL32Y/12.png" alt="12" border="0"></a>
+<br>
+<a href="https://ibb.co/SXGJ2nm"><img src="https://i.ibb.co/Y7wb6kd/13.png" alt="13" border="0"></a>
+<br>
+<hr>
 <hr>
 LO3
 Merit Criteria 
-The CRUD operations are supported on the UI but the notifications are missing. 
+The CRUD operations are supported on the UI but the notifications are missing. Overall, this application demonstrates a decent understanding of React component-based architecture to develop a front end that supports CRUD operations on the UI. However, the notifications for these operations need to be displayed.  
 
-Overall, this application demonstrates a decent understanding of React component-based architecture to develop a front end that supports CRUD operations on the UI. However, the notifications for these operations need to be displayed.  The readme should map the project goals and components to the relevant user stories. With these enhancements, the project will be on its way to realizing its full potential.
-
-
-<hr>
+<br>
+<br>
+<p style="color: red;"> Notification.js has been created. There's is now shown notifications for when the user signs it, it greets the user and shows his specific username.  </p>
+<br>
+<a href="https://ibb.co/3f4FwNc"><img src="https://i.ibb.co/8zNxJ59/2.png" alt="2" border="0"></a>
+<br>
+<a href="https://ibb.co/qNP42sb"><img src="https://i.ibb.co/dPz3H2n/1.png" alt="1" border="0"></a>
+<br>
+<p style="color: red;"> Notifications has been added when the new post is created or invalid notifications when the post couldn't be created</p>
+<br>
+<a href="https://ibb.co/QNTpQ8W"><img src="https://i.ibb.co/9T1cgwx/3.png" alt="3" border="0"></a>
+<br>
+<a href="https://ibb.co/K28zpxb"><img src="https://i.ibb.co/v3Mv64V/4.png" alt="4" border="0"></a>
+<br>
+<p style="color: red;"> Notification for editing a post or when the post editing has gone wrong</p>
+<br>
+<a href="https://ibb.co/9Hnh3b2"><img src="https://i.ibb.co/why7rSC/6.png" alt="6" border="0"></a>
+<br>
+<a href="https://ibb.co/Lv3kNFc"><img src="https://i.ibb.co/pnS0h7M/7.png" alt="7" border="0"></a>
+<br>
+<p style="color: red;"> And one for adding a comments to the comment section</p>
+<a href="https://ibb.co/SQ6qJX2"><img src="https://i.ibb.co/mvRQSCm/5.png" alt="5" border="0"></a>
+<p style="color: red;"> </p>
 
 
 <h3> Second Resubmission 

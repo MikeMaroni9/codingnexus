@@ -16,7 +16,7 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
-const SignUpForm = () => {
+const SignUpForm = ({ onSignUpSuccess }) => {
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -39,6 +39,10 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
+      // Trigger the onSignUpSuccess callback with a welcome message
+      const welcomeMessage = `Account created successfully! Welcome to Coding Nexus, ${signUpData.username}!`;
+      onSignUpSuccess && onSignUpSuccess(welcomeMessage);
+      // Redirect to the sign-in page
       history.push("/signin");
     } catch (err) {
       setErrors(err.response?.data);

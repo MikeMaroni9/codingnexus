@@ -78,7 +78,7 @@ function App() {
           <Route
             exact
             path="/signup"
-            render={() => <SignUpForm />}
+            render={() => <SignUpForm onSignUpSuccess={(welcomeMessage) => showNotification(welcomeMessage)} />}
           />
           <Route
             exact

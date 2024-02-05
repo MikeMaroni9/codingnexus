@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -7,16 +6,16 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
-
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import Notification from "../../components/Notification"; 
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
+  const [notification, setNotification] = useState(null); 
 
   const [postData, setPostData] = useState({
     title: "",
@@ -74,11 +73,20 @@ function PostEditForm() {
 
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
-      history.push(`/posts/${id}`);
+      setNotification({ message: "Post saved successfully!", variant: "success" });
+      
+      setTimeout(() => {
+        setNotification(null);
+      }, 3000);
+
+      setTimeout(() => {
+        history.push(`/posts/${id}`);
+      }, 2000);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
+        setNotification({ message: "Error saving post", variant: "danger" });
       }
     }
   };
@@ -168,6 +176,13 @@ function PostEditForm() {
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>
+      {notification && (
+        <Notification
+          message={notification.message}
+          onClose={() => setNotification(null)}
+          variant={notification.variant}
+        />
+      )}
     </Form>
   );
 }
